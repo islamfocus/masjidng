@@ -1,0 +1,59 @@
+mixin masjidForm(masjid = {})
+  form(action=`/add/${masjid._id || ''}` method="POST" class="card" enctype="multipart/form-data")
+    //-pre= h.dump(masjid)
+    
+    p
+      strong Profile of the Mosque
+    //- Profile Of the Mosque
+    label(for="name") Name of Masjid
+    input(type="text" name="name" value=masjid.name placeholder="Insert name of Mosque")
+    label(for="description") Description
+    textarea(name="description" placeholder="Central Jumat or Basic or Eid Praying ground")= masjid.description
+    label(for="population") Population Size
+    input(type="number" name="population" value=masjid.population placeholder="average population capacity")
+    label(for="langservice") Language of Service
+    input(type="text" name="langservice" value=masjid.langservice placeholder="English, Arabic, Yoruba, Hausa or Igbo")
+    //-label(for="website") Website (if any)
+    //-input(type="text" name="website" value=masjid.website)
+
+    p
+      strong Custodians of the Mosque
+    //- Custodians Of the Mosque
+    label(for="imam_name") Name of Imam
+    input(type="text" name="imam_name" value=masjid.imam_name placeholder="Insert full name of Imam")
+    label(for="imam_phone_no") Phone number of Imam
+    input(type="number" name="imam_phone_no" value=masjid.imam_phone_no placeholder="Preferrably WhatsApp Line")
+    label(for="sec_name") Name of Deputy Imam / Mosque Secretary / Mosque Admin
+    input(type="text" name="sec_name" value=masjid.sec_name placeholder="Insert full name")
+    label(for="sec_phone_no") Phone number 
+    input(type="number" name="sec_phone_no" value=masjid.sec_phone_no placeholder="Preferrably WhatsApp Line")
+    p
+      strong Location of the Mosque
+    //- Image Upload
+    label(for="photo") Front Photo view of Masjid
+      input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
+      if masjid.photo
+        img(src=`/uploads/${masjid.photo}`, alt=masjid.name width=200)
+    //- address, lng and lat
+    label(for="address") Address
+    input(type="text" id="address" name="location[address]" value=(masjid.location && masjid.location.address))
+    label(for="lng") Address Lng
+    input(type="text" id="lng" name="location[coordinates][0]" value=(masjid.location && masjid.location.coordinates[0]) placeholder="Auto generated upon Address selection from autocomplete" required)
+    label(for="lat") Address Lat
+    input(type="text" id="lat" name="location[coordinates][1]" value=(masjid.location && masjid.location.coordinates[1]) placeholder="Auto generated upon Address selection from autocomplete" required)
+    label(for="city") City
+    input(type="text" id="city" name="location[city]" value=(masjid.location && masjid.location.city))
+    
+    p
+      strong Features of the Mosque
+    //- Features of the Mosque
+    label(for="choices") Check one or more features as appropriate
+    - const choices = ['Basic', 'Jumat', 'Structured', 'Registered', 'Toilet', 'Borehole', 'Hall', 'Ablution Centre', 'Madrasah', 'Islamic Banking', 'Library', 'Generator', 'Eid']
+    - const tags = masjid.tags || []
+    ul.tags
+      each choice in choices
+        .tag.tag__choice
+          input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
+          label(for=choice) #{choice}
+    input(type="submit" value="Save →" class="button")
+    
