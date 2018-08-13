@@ -5,7 +5,7 @@ mixin masjidForm(masjid = {})
     p
       strong Profile of the Mosque
     //- Profile Of the Mosque
-    label(for="name") Name of Masjid
+    label(for="name") Name of Mosque
     input(type="text" name="name" value=masjid.name placeholder="Insert name of Mosque")
     label(for="description") Description
     textarea(name="description" placeholder="Central Jumat or Basic or Eid Praying ground")= masjid.description
@@ -23,12 +23,21 @@ mixin masjidForm(masjid = {})
     input(type="text" name="imam_name" value=masjid.imam_name placeholder="Insert full name of Imam")
     label(for="imam_phone_no") Phone number of Imam
     input(type="number" name="imam_phone_no" value=masjid.imam_phone_no placeholder="Preferrably WhatsApp Line")
-    label(for="sec_name") Name of Deputy Imam / Mosque Secretary / Mosque Admin
+    label(for="sec_name") Name of Deputy Imam / Mosque Secretary / Mosque Admin or Committee member
     input(type="text" name="sec_name" value=masjid.sec_name placeholder="Insert full name")
     label(for="sec_phone_no") Phone number 
     input(type="number" name="sec_phone_no" value=masjid.sec_phone_no placeholder="Preferrably WhatsApp Line")
     p
-      strong Location of the Mosque
+      strong Madrasah Details (Please complete If available)
+    label(for="madrasah_name") Name of Madrasah
+    input(type="text" name="madrasah_name" value=masjid.madrasah_name)
+    label(for="madrasah_contact_name") Admin Officer/Mudir/Director of Studies
+    input(type="text" name="madrasah_contact_name" value=masjid.madrasah_contact_name)
+    label(for="madrasah_phone_no") Phone number
+    input(type="number" name="madrasah_phone_no" value=masjid.madrasah_phone_no placeholder="Preferrably WhatsApp Line")
+    
+    p
+      strong Location of the Mosque or Madrasah
     //- Image Upload
     label(for="photo") Front Photo view of Masjid
       input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
