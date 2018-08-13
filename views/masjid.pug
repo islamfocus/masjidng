@@ -13,10 +13,19 @@ block content
   .single__details.inner
     img.single__map(src=h.staticMap(masjid.location.coordinates))
     p.single__location= masjid.location.address
-    p= masjid.description
-    p= masjid.imam_name
-    p= masjid.imam_phone_no
-
+    center
+        p= `${":"} : ${":"}`
+        p= `${"Mosque Type"} : ${masjid.description}`
+        p= `${"Average Population Size"} : ${masjid.population}`
+        p= `${"Language of Service"} : ${masjid.langservice}`
+        p= `${"Name of Imam"} : ${masjid.imam_name}`
+        p= `${"Contact no"} : ${masjid.imam_phone_no}`
+        p= `${"Madrasah name"} : ${masjid.madrasah_name}`
+        p= `${"Admin Officer/Mudir/Director of Studies"} : ${masjid.madrasah_contact_name}`
+        p= `${"Contact no"} : ${masjid.madrasah_phone_no}`
+    p
+    strong Features of the Mosque 
+    p
     if masjid.tags
       ul.tags
         each tag in masjid.tags

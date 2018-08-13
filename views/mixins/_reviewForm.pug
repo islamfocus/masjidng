@@ -1,6 +1,6 @@
 mixin reviewForm(masjid)
   form.reviewer(action=`/reviews/${masjid._id}` method="POST")
-    textarea(name="text" placeholder="Did you try this place? Have something to say? Leave a review...")
+    textarea(name="text" placeholder="Did you try this masjid? Have something to say? Leave a review...")
     .reviewer__meta
       .reviewer__stars
         each num in [5,4,3,2,1]

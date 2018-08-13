@@ -465,7 +465,6 @@ p {
   font-size: 1.6rem; }
 
 .title {
-  word-wrap: break-word;
   position: relative;
   z-index: 2;
   margin: 0;
@@ -474,6 +473,7 @@ p {
   line-height: 1.1;
   -ms-transform: skew(0, -3deg);
       transform: skew(0, -3deg);
+  text-transform: uppercase;
   line-height: 1.1; }
   .title--long {
     font-size: 30px; }
@@ -496,7 +496,8 @@ p {
   max-width: 600px;
   margin-top: -9rem;
   font-size: 10rem;
-  text-align: center; }
+  text-align: center;
+  text-transform: uppercase; }
 
 input, textarea {
   width: 100%;

@@ -38,7 +38,7 @@ p {
 }
 
 .title {
-  word-wrap: break-word;
+  //word-wrap: break-word;
   position: relative;
   z-index: 2;
   margin:0;
@@ -46,6 +46,7 @@ p {
   z-index: 2;
   line-height:1.1;
   transform: skew(0, -3deg);
+  text-transform: uppercase;
   &--long {
     font-size: 30px;
   }
@@ -75,4 +76,5 @@ p {
   margin-top: -9rem;
   font-size: 10rem;
   text-align: center;
+  text-transform: uppercase;
 }
