@@ -29,12 +29,12 @@ const masjidSchema = new mongoose.Schema({
   madrasah_name: {
     type: String,
     trim: true,
-    //required: 'SubhanaLlah! Please enter the name of the masjid imam!'
+    //required: 'SubhanaLlah! Please enter the name of the madrasah!'
   },
   madrasah_contact_name: {
     type: String,
     trim: true,
-    //required: 'SubhanaLlah! Please enter the name of the masjid imam!'
+    //required: 'SubhanaLlah! Please enter the name of the madrasah admin/!'
   },
   madrasah_phone_no: {
     type: Number,
