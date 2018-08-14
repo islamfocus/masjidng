@@ -495,7 +495,11 @@ p {
 .title--single {
   max-width: 600px;
   margin-top: -9rem;
+<<<<<<< HEAD
+  font-size: 10rem;
+=======
   font-size: 6.5rem;
+>>>>>>> 9827094f3094767d5a984fb089a7b74d79a9269d
   text-align: center;
   text-transform: uppercase; }
 
