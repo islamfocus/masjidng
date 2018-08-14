@@ -99,7 +99,7 @@ exports.updateMasjid = async (req, res) => {
     new: true, // return the new masjid instead of the old one
     runValidators: true
   }).exec();
-  req.flash('success', `AlhamduliLlah! Successfully updated <strong>${masjid.name}</strong>. <a href="/masajid/${masjid.slug}">View Masjid →</a>`);
+  req.flash('success', `AlhamduliLlah! Successfully updated <strong>${masjid.name}</strong>. <a href="/masjid/${masjid.slug}">View Masjid →</a>`);
   res.redirect(`/masajid/${masjid._id}/edit`);
   // Redriect them the masjid and tell them it worked
 };

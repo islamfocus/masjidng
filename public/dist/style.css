@@ -468,7 +468,7 @@ p {
   position: relative;
   z-index: 2;
   margin: 0;
-  font-size: 40px;
+  font-size: 30px;
   z-index: 2;
   line-height: 1.1;
   -ms-transform: skew(0, -3deg);
@@ -495,7 +495,11 @@ p {
 .title--single {
   max-width: 600px;
   margin-top: -9rem;
+<<<<<<< HEAD
   font-size: 10rem;
+=======
+  font-size: 6.5rem;
+>>>>>>> 9827094f3094767d5a984fb089a7b74d79a9269d
   text-align: center;
   text-transform: uppercase; }
 
@@ -789,7 +793,9 @@ label {
     right: 0;
     position: absolute;
     left: 0;
-    object-fit: cover; }
+    object-fit: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
 
 .tags {
   margin: 0;
