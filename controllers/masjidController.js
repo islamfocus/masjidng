@@ -22,7 +22,7 @@ exports.homePage = (req, res) => {
 };
 
 exports.addMasjid = (req, res) => {
-  res.render('editMasjid', { title: 'Add Masjid' });
+  res.render('editMasjid', { title: 'Add Mosque' });
 };
 
 exports.upload = multer(multerOptions).single('photo');
@@ -46,7 +46,7 @@ exports.resize = async (req, res, next) => {
 exports.createMasjid = async (req, res) => {
   req.body.author = req.user._id;
   const masjid = await (new Masjid(req.body)).save();
-  req.flash('success', `AlhamduliLlah! Successfully Created ${masjid.name}. Care to leave a review?`);
+  req.flash('success', `AlhamduliLlah! You have Successfully Created ${masjid.name}. Care to leave a review?`);
   res.redirect(`/masjid/${masjid.slug}`);
 };
 
@@ -72,12 +72,12 @@ exports.getMasajid = async (req, res) => {
     return;
   }
 
-  res.render('masajid', { title: 'Masajid', masajid, page, pages, count });
+  res.render('masajid', { title: 'Mosques, Imams and Madrasahs', masajid, page, pages, count });
 };
 
 const confirmOwner = (masjid, user) => {
   if (!masjid.author.equals(user._id)) {
-    throw Error('SubhanaLlah! You must be a masjid manager in order to edit it!');
+    throw Error('SubhanaLlah! You must be a mosque manager in order to edit it!');
   }
 };
 
@@ -99,7 +99,7 @@ exports.updateMasjid = async (req, res) => {
     new: true, // return the new masjid instead of the old one
     runValidators: true
   }).exec();
-  req.flash('success', `AlhamduliLlah! Successfully updated <strong>${masjid.name}</strong>. <a href="/masjid/${masjid.slug}">View Masjid →</a>`);
+  req.flash('success', `AlhamduliLlah! You have Successfully updated <strong>${masjid.name}</strong>. <a href="/masjid/${masjid.slug}">View Masjid →</a>`);
   res.redirect(`/masajid/${masjid._id}/edit`);
   // Redriect them the masjid and tell them it worked
 };
@@ -119,7 +119,7 @@ exports.getMasajidByTag = async (req, res) => {
   const [tags, masajid] = await Promise.all([tagsPromise, masajidPromise]);
 
 
-  res.render('tag', { tags, title: 'Tags', tag, masajid });
+  res.render('tag', { tags, title: 'Tag Mosques by features', tag, masajid });
 };
 
 
@@ -161,7 +161,7 @@ exports.mapMasajid = async (req, res) => {
 };
 
 exports.mapPage = (req, res) => {
-  res.render('map', { title: 'Map' });
+  res.render('map', { title: 'Mosque Locator' });
 };
 
 exports.heartMasjid = async (req, res) => {
@@ -180,10 +180,10 @@ exports.getHearts = async (req, res) => {
   const masajid = await Masjid.find({
     _id: { $in: req.user.hearts }
   });
-  res.render('masajid', { title: 'Hearted Masajid', masajid });
+  res.render('masajid', { title: 'Hearted Mosques', masajid });
 };
 
 exports.getTopMasajid = async (req, res) => {
   const masajid = await Masjid.getTopMasajid();
-  res.render('topMasajid', { masajid, title:'⭐ Top Masajid!'});
+  res.render('topMasajid', { masajid, title:'⭐ Top Mosques!'});
 }

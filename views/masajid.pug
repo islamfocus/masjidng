@@ -5,7 +5,7 @@ include mixins/_pagination
 
 block content
   .inner
-    h2="Mosques, Imams and Madrasahs"
+    h2= title
     .masajid
       each masjid in masajid
         +masjidCard(masjid)

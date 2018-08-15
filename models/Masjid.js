@@ -6,16 +6,16 @@ const masjidSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    required: 'SubhanaLlah! Please enter a masjid name!'
+    required: 'SubhanaLlah! Please enter a mosque name!'
   },
   imam_name: {
     type: String,
     trim: true,
-    required: 'SubhanaLlah! Please enter the name of the masjid imam!'
+    required: 'SubhanaLlah! Please enter the name of the mosque imam!'
   },
   imam_phone_no: {
     type: Number,
-    required: 'SubhanaLlah! You must supply the phone number of the masjid imam!'
+    required: 'SubhanaLlah! You must supply the phone number of the mosque imam!'
   },
   sec_name: {
     type: String,
@@ -29,25 +29,22 @@ const masjidSchema = new mongoose.Schema({
   madrasah_name: {
     type: String,
     trim: true,
-    //required: 'SubhanaLlah! Please enter the name of the madrasah!'
   },
   madrasah_contact_name: {
     type: String,
     trim: true,
-    //required: 'SubhanaLlah! Please enter the name of the madrasah admin/!'
   },
   madrasah_phone_no: {
     type: Number,
-    //required: 'SubhanaLlah! You must supply the phone number of the masjid secretary!'
   },
   population: {
     type: Number,
-    required: 'SubhanaLlah! You must supply the average population size of the masjid!'
+    required: 'SubhanaLlah! You must supply the average population size of the mosque!'
   },
   langservice: {
     type: String,
     trim: true,
-    required: 'SubhanaLlah! Please enter the language of service of the masjid!'
+    required: 'SubhanaLlah! Please enter the language of service of the mosque!'
   },
   website: {
     type: String,
@@ -97,7 +94,8 @@ masjidSchema.index({
   name: 'text',
   description: 'text',
   //imam_name: 'text',
-  //sec_name: 'text'
+  //sec_name: 'text',
+  //madrasah_name: 'text'
 });
 
 masjidSchema.index({ location: '2dsphere' });

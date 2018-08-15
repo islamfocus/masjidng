@@ -18,7 +18,7 @@ exports.staticMap = ([lng, lat]) => `https://maps.googleapis.com/maps/api/static
 exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
 // Some details about the site
-exports.siteName = `Finding Mosques made easier!`;
+exports.siteName = `Finding made easier!`;
 
 exports.menu = [
   { slug: '/masajid', title: 'Mosques', icon: 'masjid', },
