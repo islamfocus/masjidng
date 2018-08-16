@@ -24,6 +24,6 @@ exports.menu = [
   { slug: '/masajid', title: 'Mosques', icon: 'masjid', },
   { slug: '/add', title: 'Add', icon: 'add', },
   { slug: '/map', title: 'Connect', icon: 'connect', },
-  //{ slug: '/tags', title: 'Tags', icon: 'tag', },
+  { slug: '/tags', title: 'Tags', icon: 'tag', },
   //{ slug: '/top', title: 'Top', icon: 'top', },
 ];
