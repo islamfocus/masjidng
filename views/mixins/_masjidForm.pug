@@ -27,8 +27,6 @@ mixin masjidForm(masjid = {})
           label(for=mosqueType) #{mosqueType}
     label(for="population") Population Size
     input(type="number" name="population" value=masjid.population placeholder="average population capacity")
-    //-label(for="langservice") Language of Service
-    //-input(type="text" name="langservice" value=masjid.langservice placeholder="English, Arabic, Yoruba, Hausa or Igbo")
     label(for="langservices") Language of Service
     - const langservices = ['English', 'Yoruba', 'Hausa', 'Igbo', 'Arabic', 'French', 'Yoruba and Hausa', 'Yoruba and Igbo', 'Igbo and Hausa']
     - const lang_services = masjid.lang_services || []
@@ -38,14 +36,14 @@ mixin masjidForm(masjid = {})
           option(selected=(lang_services.includes(lang))) #{lang}
           label(for=lang) #{lang}
     label(for="website") Website (if any)
-    input(type="text" name="website" value=masjid.website)
+    input(type="text" name="website" value=masjid.website placeholder="website")
     label(for="description") Description
     textarea(name="description" placeholder="Describe your mosque more in details")= masjid.description
     p
       strong Features of the Mosque
     //- Features of the Mosque
     label(for="choices") Check one or more features as appropriate
-    - const choices = ['Basic', 'Jumat', 'Structured', 'Registered', 'Unregistered', 'Toilet', 'Borehole', 'Prayer Hall', 'Ablution Area', 'Madrasah', 'Islamic Bank Account', 'Conventional Bank Account', 'Library', 'Generator', 'Minaret', 'Minbar', ]
+    - const choices = ['Basic/Ratibi', 'Central Jumat', 'Structured', 'Registered', 'Unregistered', 'Toilet', 'Borehole', 'Prayer Hall', 'Ablution Area', 'Madrasah', 'Islamic Bank Account', 'Conventional Bank Account', 'Library', 'Generator', 'Minaret', 'Minbar', ]
     - const tags = masjid.tags || []
     ul.tags
       each choice in choices
@@ -76,7 +74,7 @@ mixin masjidForm(masjid = {})
     label(for="madrasah_name") Name of Madrasah
     input(type="text" name="madrasah_name" value=masjid.madrasah_name placeholder="Insert name of Madrasah")
     label(for="madrasah_contact_name") Admin Officer/Mudir/Director of Studies
-    input(type="text" name="madrasah_contact_name" value=masjid.madrasah_contact_name placeholder="Admin Officer/Mudir/Director of Studies")
+    input(type="text" name="madrasah_contact_name" value=masjid.madrasah_contact_name placeholder="Insert full name")
     label(for="madrasah_phone_no") Phone number
     input(type="number" name="madrasah_phone_no" value=masjid.madrasah_phone_no placeholder="Preferrably WhatsApp Line")
     label(for='choices') Check the boxes that best describes the Madrasah.

@@ -20,11 +20,11 @@ const masjidSchema = new mongoose.Schema({
   sec_name: {
     type: String,
     trim: true,
-    required: 'SubhanaLlah! Please enter the name of the Deputy Imam / Mosque Secretary / Mosque Admin or Committee member!'
+    required: 'SubhanaLlah! Please enter the name of the Deputy Imam / Mosque Secretary  or Committee member!'
   },
   sec_phone_no: {
     type: Number,
-    required: 'SubhanaLlah! You must supply the phone number of the Deputy Imam / Mosque Secretary / Mosque Admin or Committee member!'
+    required: 'SubhanaLlah! You must supply the phone number of the Deputy Imam / Mosque Secretary or Committee member!'
   },
   madrasah_name: {
     type: String,
@@ -41,11 +41,6 @@ const masjidSchema = new mongoose.Schema({
     type: Number,
     required: 'SubhanaLlah! You must supply the average population size of the mosque!'
   },
-  lang_services: {
-    type: String,
-    trim: true,
-    required: 'SubhanaLlah! Please enter the language of service of the mosque!'
-  },
   website: {
     type: String,
     trim: true,
@@ -56,13 +51,13 @@ const masjidSchema = new mongoose.Schema({
     trim: true
   },
   tags: [String],
-  imam_tags: [String], required: 'SubhanaLlah! Please check one or more features of the mosque imam',
+  imam_tags: [String],
+  lang_services: [String],
   madrasah_tags: [String], 
-  mosque_type: [String], required: 'SubhanaLlah! Please enter the mosque ownership structure',
-  mosque_category: [String], required: 'SubhanaLlah! Please enter the mosque type',
+  mosque_type: [String],
+  mosque_category: [String],
   year_founded: {
     type: Number,
-    required: 'SubhanaLlah! Please enter the founding year of the mosque!'
   },
   created: {
     type: Date,
