@@ -51,7 +51,8 @@
     border-radius: 3px;
   }
   &--success {
-    background: linear-gradient(135deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+    background: #21b421;
+    //background: linear-gradient(135deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
   }
   &--error {
     background: linear-gradient(20deg, rgba(255,0,0,1) 0%, rgba(200,0,0,1) 100%);

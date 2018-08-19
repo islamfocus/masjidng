@@ -15,14 +15,18 @@ block content
     p.single__location= masjid.location.address
     center
         p= `${":"} : ${":"}`
-        p= `${"Mosque Type"} : ${masjid.description}`
+        p= `${"Year Founded"} : ${masjid.year_founded}`
+        p= `${"Mosque Type"} : ${masjid.mosque_category}`
+        p= `${"Mosque  Ownership Structure"} : ${masjid.mosque_type}`
         p= `${"Average Population Size"} : ${masjid.population}`
-        p= `${"Language of Service"} : ${masjid.langservice}`
+        p= `${"Language of Service"} : ${masjid.lang_services}`
         p= `${"Name of Imam"} : ${masjid.imam_name}`
         p= `${"Contact no"} : ${masjid.imam_phone_no}`
         p= `${"Madrasah name"} : ${masjid.madrasah_name}`
         p= `${"Admin Officer/Mudir/Director of Studies"} : ${masjid.madrasah_contact_name}`
         p= `${"Contact no"} : ${masjid.madrasah_phone_no}`
+        p= `${"Mosque Website"} : ${masjid.website}`
+        p= `${"Mosque Describtion"} : ${masjid.description}`
     p
     strong Features of the Mosque 
     p

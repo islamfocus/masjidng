@@ -22,7 +22,7 @@ exports.homePage = (req, res) => {
 };
 
 exports.addMasjid = (req, res) => {
-  res.render('editMasjid', { title: 'Add Mosque' });
+  res.render('editMasjid', { title: 'Add Mosque and Madrasah' });
 };
 
 exports.upload = multer(multerOptions).single('photo');
@@ -52,7 +52,7 @@ exports.createMasjid = async (req, res) => {
 
 exports.getMasajid = async (req, res) => {
   const page = req.params.page || 1;
-  const limit = 4;
+  const limit = 9;
   const skip = (page * limit) - limit;
 
   // 1. Query the database for a list of all masajid
@@ -119,7 +119,7 @@ exports.getMasajidByTag = async (req, res) => {
   const [tags, masajid] = await Promise.all([tagsPromise, masajidPromise]);
 
 
-  res.render('tag', { tags, title: 'Tag Mosques by features', tag, masajid });
+  res.render('tag', { tags, title: 'Tag Mosques and Madrasahs', tag, masajid });
 };
 
 
@@ -156,12 +156,12 @@ exports.mapMasajid = async (req, res) => {
     }
   };
 
-  const masajid = await Masjid.find(q).select('slug name description imam_name imam_phone_no location photo').limit(10);
+  const masajid = await Masjid.find(q).select('slug name mosque_category imam_name imam_phone_no location photo').limit(10);
   res.json(masajid);
 };
 
 exports.mapPage = (req, res) => {
-  res.render('map', { title: 'Mosque Locator' });
+  res.render('map', { title: 'Mosque and Madrasah Locator' });
 };
 
 exports.heartMasjid = async (req, res) => {
@@ -180,10 +180,10 @@ exports.getHearts = async (req, res) => {
   const masajid = await Masjid.find({
     _id: { $in: req.user.hearts }
   });
-  res.render('masajid', { title: 'Hearted Mosques', masajid });
+  res.render('masajid', { title: 'Favorite Mosques and Madrasahs', masajid });
 };
 
 exports.getTopMasajid = async (req, res) => {
   const masajid = await Masjid.getTopMasajid();
-  res.render('topMasajid', { masajid, title:'⭐ Top Mosques!'});
+  res.render('topMasajid', { masajid, title:'⭐ Top Mosques and Madrasahs!'});
 }
