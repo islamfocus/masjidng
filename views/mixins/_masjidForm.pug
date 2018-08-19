@@ -9,8 +9,8 @@ mixin masjidForm(masjid = {})
     input(type="text" name="name" value=masjid.name placeholder="Insert name of Mosque")
     label(for="year_founded") Year Founded
     input(type="number" name="year_founded" value=masjid.year_founded placeholder="Year format should be yyyy")
-    label(for="categories") Check the category that best describes the Mosque or Madrasah
-    - const categories = ['Basic', 'Jumat', 'Basic and Madrasah', 'Jumat and Madrasah', 'Eid Praying Ground', 'Madrasah']
+    label(for="categories") Check the category that best describes the Mosque
+    - const categories = ['Basic', 'Jumat', 'Basic and Madrasah', 'Jumat and Madrasah', 'Eid Praying Ground']
     - const mosque_category = masjid.mosque_category || []
     ul.tags
       each category in categories

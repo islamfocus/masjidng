@@ -56,10 +56,10 @@ const masjidSchema = new mongoose.Schema({
     trim: true
   },
   tags: [String],
-  imam_tags: [String],
-  madrasah_tags: [String],
-  mosque_type: [String],
-  mosque_category: [String],
+  imam_tags: [String], required,
+  madrasah_tags: [String], 
+  mosque_type: [String], required: 'SubhanaLlah! Please enter the mosque ownership structure',
+  mosque_category: [String], required: 'SubhanaLlah! Please enter the mosque type',
   year_founded: {
     type: Number,
     required: 'SubhanaLlah! Please enter the founding year of the mosque!'
