@@ -119,7 +119,7 @@ exports.getMasajidByTag = async (req, res) => {
   const [tags, masajid] = await Promise.all([tagsPromise, masajidPromise]);
 
 
-  res.render('tag', { tags, title: 'Tag Mosques and Madrasahs', tag, masajid });
+  res.render('tag', { tags, title: 'Tag Mosques by Features', tag, masajid });
 };
 
 
@@ -161,7 +161,7 @@ exports.mapMasajid = async (req, res) => {
 };
 
 exports.mapPage = (req, res) => {
-  res.render('map', { title: 'Mosque and Madrasah Locator' });
+  res.render('map', { title: 'Mosque Locator' });
 };
 
 exports.heartMasjid = async (req, res) => {
@@ -180,10 +180,10 @@ exports.getHearts = async (req, res) => {
   const masajid = await Masjid.find({
     _id: { $in: req.user.hearts }
   });
-  res.render('masajid', { title: 'Favorite Mosques and Madrasahs', masajid });
+  res.render('masajid', { title: 'Favorite Mosques', masajid });
 };
 
 exports.getTopMasajid = async (req, res) => {
   const masajid = await Masjid.getTopMasajid();
-  res.render('topMasajid', { masajid, title:'⭐ Top Mosques and Madrasahs!'});
+  res.render('topMasajid', { masajid, title:'⭐ Top Mosques!'});
 }
