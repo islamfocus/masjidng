@@ -56,7 +56,7 @@ const masjidSchema = new mongoose.Schema({
     trim: true
   },
   tags: [String],
-  imam_tags: [String], required: 'SubhanaLlah! Please description of the mosque imam',
+  imam_tags: [String], required: 'SubhanaLlah! Please check one or more features of the mosque imam',
   madrasah_tags: [String], 
   mosque_type: [String], required: 'SubhanaLlah! Please enter the mosque ownership structure',
   mosque_category: [String], required: 'SubhanaLlah! Please enter the mosque type',
