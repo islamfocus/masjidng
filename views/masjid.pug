@@ -34,9 +34,9 @@ block content
       ul.tags
         each tag in masjid.tags
           li.tag
-            a.tag__link(href=`/tags/${tag}`)
+            a.tag__link
               span.tag__text  ##{tag}
-
+                //-(href=`/tags/${tag}`)
     if user
       +reviewForm(masjid)
 

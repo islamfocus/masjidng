@@ -10,25 +10,25 @@ mixin masjidForm(masjid = {})
     label(for="year_founded") Year Founded
     input(type="number" name="year_founded" value=masjid.year_founded placeholder="Year format should be yyyy")
     label(for="categories") Check the category that best describes the Mosque
-    - const categories = ['Basic', 'Jumat', 'Basic and Madrasah', 'Jumat and Madrasah', 'Eid Praying Ground']
+    - const categories = ['Basic Mosque', 'Jumat Mosque', 'Eid Praying Ground', 'Basic Mosque & Madrasah', 'Jumat Mosque & Madrasah']
     - const mosque_category = masjid.mosque_category || []
     ul.tags
       each category in categories
         .tag.tag__choice
           input(type="radio" id=category value=category name="mosque_category" checked=(mosque_category.includes(category)))
           label(for=category) #{category}
-    label(for="mosqueTypes") Mosque Ownership Structure
-    - const mosqueTypes = ['Muslim Community Owned', 'Islamic Society Owned', 'Family Owned', 'Government Owned', 'Privately Owned', 'Generally Owned']
-    - const mosque_type = masjid.mosque_type || []
+    label(for="mosque_ownership") Mosque Ownership Structure
+    - const mosque_ownership = ['Muslim Community Owned', 'Islamic Society Owned', 'Family Owned', 'Government Owned', 'Privately Owned', 'Generally Owned']
+    - const mosqueOwnership = masjid.mosqueOwnership || []
     ul.tags
-       select(id=mosqueType value=mosqueType name="mosque_type")
-        each mosqueType in mosqueTypes
-          option(selected=(mosque_type.includes(mosqueType))) #{mosqueType}
+       select(id=mosqueType value=mosqueType name="mosqueOwnership")
+        each mosqueType in mosque_ownership
+          option(selected=(mosqueOwnership.includes(mosqueType))) #{mosqueType}
           label(for=mosqueType) #{mosqueType}
     label(for="population") Population Size
     input(type="number" name="population" value=masjid.population placeholder="average population capacity")
     label(for="langservices") Language of Service
-    - const langservices = ['English', 'Yoruba', 'Hausa', 'Igbo', 'Arabic', 'French', 'Yoruba and Hausa', 'Yoruba and Igbo', 'Igbo and Hausa']
+    - const langservices = ['Arabic', 'English', 'Yoruba', 'Hausa', 'Igbo', 'Yoruba and Hausa', 'Yoruba and Igbo', 'Igbo and Hausa']
     - const lang_services = masjid.lang_services || []
     ul.tags
        select(id=lang value=lang name="lang_services")
@@ -38,7 +38,7 @@ mixin masjidForm(masjid = {})
     label(for="website") Website (if any)
     input(type="text" name="website" value=masjid.website placeholder="website")
     label(for="description") Description
-    textarea(name="description" placeholder="Describe your mosque more in details")= masjid.description
+    textarea(name="description" placeholder="Describe your mosque more in details (optional)")= masjid.description
     p
       strong Features of the Mosque
     //- Features of the Mosque
@@ -61,14 +61,6 @@ mixin masjidForm(masjid = {})
     input(type="text" name="sec_name" value=masjid.sec_name placeholder="Insert full name")
     label(for="sec_phone_no") Phone number 
     input(type="number" name="sec_phone_no" value=masjid.sec_phone_no placeholder="Preferrably WhatsApp Line")
-    label(for='imams') Check the boxes that best describes the Mosque Imams.
-      - const imams = ['Employed ', 'Unemployed', 'Self Employed', 'Full Time', 'Part Time', 'Educated', 'Uneducated', 'Youth', 'Elderly']
-      - const imam_tags = masjid.imam_tags || []
-      ul.tags
-        each imam in imams
-          .tag.tag__choice
-            input(type="checkbox" id=imam value=imam name="imam_tags" checked=(imam_tags.includes(imam)))
-            label(for=imam) #{imam}
     p
       strong Madrasah Details (Please complete If available)
     label(for="madrasah_name") Name of Madrasah
@@ -78,7 +70,7 @@ mixin masjidForm(masjid = {})
     label(for="madrasah_phone_no") Phone number
     input(type="number" name="madrasah_phone_no" value=masjid.madrasah_phone_no placeholder="Preferrably WhatsApp Line")
     label(for='choices') Check the boxes that best describes the Madrasah.
-      - const madrasahs = ['Arabic Studies', 'Quran Memorization', 'Islamic Religiuos Studies', 'Arabic Speaking', 'Boarding Facility', 'Primary and Secondary Level']
+      - const madrasahs = ['Arabic Studies', 'Quran Memorization', 'Islamic Religiuos Studies', 'Boarding Facility', 'Primary and Secondary Level']
       - const madrasah_tags = masjid.madrasah_tags || []
       ul.tags
         each madrasah in madrasahs

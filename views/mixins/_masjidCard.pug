@@ -25,7 +25,10 @@ mixin masjidCard(masjid = {})
     .masjid__details
       p
         strong=masjid.imam_name
+      //-p
+        strong=masjid.imam_phone_no
       p
-        strong=masjid.mosque_category  
+        strong=masjid.mosque_category 
+  
       p
         strong=masjid.location.city

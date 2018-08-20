@@ -727,8 +727,7 @@ label {
   .masjid--wide {
     width: 100%; }
   .masjid__details {
-    padding: 2rem;
-    text-transform: uppercase; }
+    padding: 1rem; }
     .masjid__details p {
       line-height: 1.2;
       margin-bottom: 0; }
@@ -840,7 +839,7 @@ label {
     display: block; }
   .tag__count {
     padding: 1rem 1rem;
-    background: white;
+    background: black;
     border-left: 3px solid rgba(0, 0, 0, 0.1);
     margin-right: -1px;
     /* ugh */

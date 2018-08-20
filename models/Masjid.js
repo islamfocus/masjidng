@@ -20,11 +20,11 @@ const masjidSchema = new mongoose.Schema({
   sec_name: {
     type: String,
     trim: true,
-    required: 'SubhanaLlah! Please enter the name of the Deputy Imam / Mosque Secretary  or Committee member!'
+    //required: 'SubhanaLlah! Please enter the name of the Deputy Imam / Mosque Secretary  or Committee member!'
   },
   sec_phone_no: {
     type: Number,
-    required: 'SubhanaLlah! You must supply the phone number of the Deputy Imam / Mosque Secretary or Committee member!'
+    //required: 'SubhanaLlah! You must supply the phone number of the Deputy Imam / Mosque Secretary or Committee member!'
   },
   madrasah_name: {
     type: String,
@@ -51,10 +51,9 @@ const masjidSchema = new mongoose.Schema({
     trim: true
   },
   tags: [String],
-  imam_tags: [String],
   lang_services: [String],
   madrasah_tags: [String], 
-  mosque_type: [String],
+  mosqueOwnership: [String],
   mosque_category: [String],
   year_founded: {
     type: Number,
